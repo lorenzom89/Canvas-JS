@@ -13,15 +13,11 @@
     <h1>Desenhando no Canvas</h1>
 
     <canvas id="tela" width="800" height="400"></canvas>
-
-    <div class="colorArea">
-        <div data-color="black" style="background-color: black" class="color active"></div>
-        <div data-color="blue" style="background-color: blue" class="color"></div>
-        <div data-color="red" style="background-color: red" class="color"></div>
-        <div data-color="green" style="background-color: green" class="color"></div>
-        <div data-color="yellow" style="background-color: yellow" class="color"></div>
-        <div data-color="gray" style="background-color: gray" class="color"></div>
+    <div class="colorPicker">
+        <label for="colorpicker">Escolha uma cor:</label>
+        <input type='color' id="colorpicker" value="#000000">
     </div>
+
 
     <button class="clear">Limpar Quadro</button>
 

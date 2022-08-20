@@ -25,19 +25,6 @@ h1 {
     cursor: crosshair;
 }
 
-.colorArea {
-    width: 800px;
-    display: flex;
-}
-.color {
-    flex: 1;
-    height: 40px;
-    cursor: pointer;
-}
-.color.active {
-    border: 5px solid #FFF;
-}
-
 .clear {
     border: 1px solid #000;
     background-color: rgba(0, 0, 0, 0.2);
@@ -45,6 +32,12 @@ h1 {
     padding: 10px;
     margin-top: 20px;
     cursor: pointer;
+}
+
+.colorPicker {
+    color: #FFF;
+    font-size: 20;
+    font-weight: bold;
 }
 
 footer {

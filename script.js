@@ -6,19 +6,15 @@ let cursorY = 0;
 let screen = document.querySelector('#tela');
 let context = screen.getContext('2d');
 
-document.querySelectorAll('.colorArea .color').forEach(item => {
-    item.addEventListener('click', changeColor)
-});
+document.querySelector('#colorpicker').addEventListener('change', colorChange)
 screen.addEventListener('mousedown', onPress);
 screen.addEventListener('mousemove', onMove);
 screen.addEventListener('mouseup', onRelease);
 document.querySelector('.clear').addEventListener('click', clearScreen)
 
-function changeColor(e) {
-    let color = e.target.getAttribute('data-color');
+function colorChange(e) {
+    let color = document.querySelector('#colorpicker').value;
     currentColor = color;
-    document.querySelector('.color.active').classList.remove('active');
-    e.target.classList.add('active');
 }
 
 
@@ -26,6 +22,7 @@ function onPress(e) {
     drawing = true;
     cursorX = e.pageX - screen.offsetLeft;
     cursorY = e.pageY - screen.offsetTop;
+    colorChange();
 }
 
 function onMove(e) {
@@ -58,4 +55,6 @@ function draw(posX, posY) {
 function clearScreen() {
     context.setTransform(1, 0, 0, 1, 0, 0);
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+    document.querySelector('#colorpicker').reset();
+    document.querySelector('#colorpicker').value = '#000000'
 }
